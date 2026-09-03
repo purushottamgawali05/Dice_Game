@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Button = styled.button`
   color: white;
@@ -20,6 +20,15 @@ const Button = styled.button`
   }
 `;
 
-const ButtonOutline= styled(Button)``;
+export const ButtonOutline = styled (Button)`
+background-color: white;
+color: black;
+border-color: 1px solid black;
+    &:hover{
+    background-color: black;
+    border: 1px solid transparent;
+    color: white;
+  }
+`;
 
 export default Button;
