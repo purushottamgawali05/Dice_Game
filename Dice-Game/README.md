@@ -74,7 +74,3 @@ src/
 └── index.css     # Global styles
 public/images/    # Dice images
 ```
-
-## License
-
-This project is for learning and personal use.
