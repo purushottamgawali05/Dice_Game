@@ -3,6 +3,7 @@ import NumberSelector from "./NumberSelector";
 import RollDice from "./RollDice";
 import TotalScore from "./TotalScore";
 import styled from "styled-components";
+import Button from "../style//Button"
 
 const GamePlay = () => {
   const [score, setScore] = useState(0);
@@ -19,7 +20,6 @@ const GamePlay = () => {
       setError("You have not selected any number!");
       return;
     }
-    setError("");
 
     const randomNumber = generateRandomNumber(1, 7);
 
@@ -40,11 +40,16 @@ const GamePlay = () => {
         <TotalScore score={score} />
         <NumberSelector
           error={error}
+          setError = {setError}
           selectedNumber={selectedNumber}
           setSelectedNumber={setSelectedNumber}
         />
       </div>
-      <RollDice currentDice={currentDice} rollDice={rollDice} />
+      <RollDice currentDice={currentDice} rollDice={rollDice}/>
+      <div className="btns">
+        <Button>Reset</Button>
+        <Button>Show Rules</Button>
+      </div>
     </MainContainer>
   );
 };
@@ -58,5 +63,13 @@ const MainContainer = styled.main`
     display: flex;
     justify-content: space-around;
     align-items: end;
+  }
+
+    .btns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
 `;
